@@ -5,6 +5,13 @@ pyvenv.cfg
 __pycache__/
 .vscode/
 
+node_modules/
+.next/
+portfolio/
+.vscode/
+.eslintcache
+
+
 # dependencies
 /node_modules
 /.pnp
