@@ -167,6 +167,112 @@ const Draken = () => {
           </Box>
         </a>
 
+        <a href="https://the-chronicles.vercel.app/">
+          <Box
+            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
+            id="project"
+            sx={{
+              "&:hover": {
+                boxShadow:
+                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                backgroundColor: "rgba(255, 255, 255, 0.008)",
+              },
+            }}
+          >
+            <Box
+              className="flex gap-3 text-white"
+              sx={{
+                "@media(max-width:600px)": {
+                  display: "flex",
+                  flexDirection: "column",
+                },
+              }}
+            >
+              <Image
+                src={news}
+                alt="news"
+                style={{
+                  width: "180px",
+                  height: "100px",
+                  paddingRight: "30px",
+                }}
+              />
+              <Box>
+                <div className="flex text-white font-bold mb-2 gap-2">
+                  <p>The Chronicles</p>
+                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
+                </div>
+                <div>
+                  <p className="mb-4">
+                    Stay informed with our React powered news app, leveraging
+                    the News API and React Hooks for real time updates. Explore
+                    diverse news categories seamlessly.
+                  </p>
+                  <div className="flex gap-2 p-1 my-3 flex-wrap">
+                    <Button variant="outlined">News API</Button>
+                    <Button variant="outlined">React</Button>
+                    <Button variant="outlined">JavaScript</Button>
+                  </div>
+                </div>
+              </Box>
+            </Box>
+          </Box>
+        </a>
+
+        <a href="https://kanbanix.vercel.app/">
+          <Box
+            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
+            id="project"
+            sx={{
+              "&:hover": {
+                boxShadow:
+                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                backgroundColor: "rgba(255, 255, 255, 0.008)",
+              },
+            }}
+          >
+            <Box
+              className="flex gap-3 text-white"
+              sx={{
+                "@media(max-width:600px)": {
+                  display: "flex",
+                  flexDirection: "column",
+                },
+              }}
+            >
+              <Image
+                src={todo}
+                alt="todo"
+                style={{
+                  width: "180px",
+                  height: "100px",
+                  paddingRight: "30px",
+                }}
+              />
+              <Box>
+                <div className="flex text-white font-bold mb-2 gap-2">
+                  <p>Kanbanix</p>
+                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
+                </div>
+                <div>
+                  <p className="mb-4">
+                    It is a Kanban board with a Matrix style background,
+                    offering intuitive drag and drop, editing and deleting task
+                    management in a terminal-like interface. Has local storage
+                    support.
+                  </p>
+                  <div className="flex gap-2 p-1 my-3 flex-wrap">
+                    <Button variant="outlined">Local Storage</Button>
+                    <Button variant="outlined">HTML</Button>
+                    <Button variant="outlined">CSS</Button>
+                    <Button variant="outlined">JavaScript</Button>
+                  </div>
+                </div>
+              </Box>
+            </Box>
+          </Box>
+        </a>
+
         <a href="https://nom-nom-nomad.vercel.app/">
           <Box
             className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
@@ -265,112 +371,6 @@ const Draken = () => {
                     <Button variant="outlined">JavaScript</Button>
                     <Button variant="outlined">Bootstrap</Button>
                     <Button variant="outlined">Gen AI</Button>
-                  </div>
-                </div>
-              </Box>
-            </Box>
-          </Box>
-        </a>
-
-        <a href="https://kanbanix.vercel.app/">
-          <Box
-            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
-            id="project"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
-            <Box
-              className="flex gap-3 text-white"
-              sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
-                },
-              }}
-            >
-              <Image
-                src={todo}
-                alt="todo"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
-                }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>Kanbanix</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    It is a Kanban board with a Matrix style background,
-                    offering intuitive drag and drop, editing and deleting task
-                    management in a terminal-like interface. Has local storage
-                    support.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">Local Storage</Button>
-                    <Button variant="outlined">HTML</Button>
-                    <Button variant="outlined">CSS</Button>
-                    <Button variant="outlined">JavaScript</Button>
-                  </div>
-                </div>
-              </Box>
-            </Box>
-          </Box>
-        </a>
-
-        <a href="https://github.com/YASHasvi-SHUkla/theChronicles">
-          <Box
-            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
-            id="project"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
-            <Box
-              className="flex gap-3 text-white"
-              sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
-                },
-              }}
-            >
-              <Image
-                src={news}
-                alt="news"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
-                }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>The Chronicles</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    Stay informed with our React powered news app, leveraging
-                    the News API and React Hooks for real time updates. Explore
-                    diverse news categories seamlessly.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">News API</Button>
-                    <Button variant="outlined">React</Button>
-                    <Button variant="outlined">JavaScript</Button>
                   </div>
                 </div>
               </Box>
