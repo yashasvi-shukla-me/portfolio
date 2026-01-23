@@ -6,6 +6,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import codeforge from "../assets/codeforge.png";
 import ames from "../assets/ames.png";
+import resume from "../assets/resume.png";
 import news from "../assets/news.png";
 import docs from "../assets/docs.jpeg";
 import quiz from "../assets/quiz.jpeg";
@@ -28,7 +29,7 @@ const Draken = () => {
       <Grid item xl={6} md={6} lg={6} sm={12} className="relative">
         <div className="static lg:fixed">
           <Box className="w-full md:p-14 p-4 flex flex-col items-start">
-            <h1 className="text-white">Yashasvi Shukla</h1>
+            <h1 className="text-white">Yashasvi Shukla 🐦‍🔥</h1>
             <br></br>
             <h3 className="text-white">
               A Web Developer with Python toppings !
@@ -59,7 +60,7 @@ const Draken = () => {
           Projects
         </span>
 
-        <a href="https://github.com/yashasvi-shukla-me/CodeForge">
+        <a href="https://codeforge-theta.vercel.app/">
           <Box
             className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
             id="project"
@@ -96,16 +97,71 @@ const Draken = () => {
                 </div>
                 <div>
                   <p className="mb-4">
-                    CodeForge is a full-stack coding and online judge platform
-                    inspired by LeetCode, allowing users to add and solve
-                    problems in multiple languages with real time code execution
-                    using the Judge0 API.
+                    Designed and developed a production ready online judge
+                    platform supporting real-time code execution, problem
+                    management with secure multi language compilation using
+                    Judge0 and a scalable full stack architecture.
                   </p>
                   <div className="flex gap-2 p-1 my-3 flex-wrap">
                     <Button variant="outlined">Judge0 API</Button>
                     <Button variant="outlined">React</Button>
                     <Button variant="outlined">Node.js</Button>
                     <Button variant="outlined">MongoDB</Button>
+                    <Button variant="outlined">Docker</Button>
+                  </div>
+                </div>
+              </Box>
+            </Box>
+          </Box>
+        </a>
+
+        <a href="https://talentforge-one.vercel.app/">
+          <Box
+            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
+            id="project"
+            sx={{
+              "&:hover": {
+                boxShadow:
+                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                backgroundColor: "rgba(255, 255, 255, 0.008)",
+              },
+            }}
+          >
+            <Box
+              className="flex gap-3 text-white"
+              sx={{
+                "@media(max-width:600px)": {
+                  display: "flex",
+                  flexDirection: "column",
+                },
+              }}
+            >
+              <Image
+                src={resume}
+                alt="resume"
+                style={{
+                  width: "180px",
+                  height: "100px",
+                  paddingRight: "30px",
+                }}
+              />
+              <Box>
+                <div className="flex text-white font-bold mb-2 gap-2">
+                  <p>TalentForge</p>
+                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
+                </div>
+                <div>
+                  <p className="mb-4">
+                    Built an end-to-end ML system that parses PDF resumes,
+                    performs NLP-based skill extraction, computes role fit
+                    scoring, and provides AI driven feedback via a full stack
+                    web interface.
+                  </p>
+                  <div className="flex gap-2 p-1 my-3 flex-wrap">
+                    <Button variant="outlined">Machine Learning</Button>
+                    <Button variant="outlined">React</Button>
+                    <Button variant="outlined">FastAPI</Button>
+                    <Button variant="outlined">NLP</Button>
                     <Button variant="outlined">Docker</Button>
                   </div>
                 </div>
@@ -273,6 +329,59 @@ const Draken = () => {
           </Box>
         </a>
 
+        <a href="https://probe-five.vercel.app/">
+          <Box
+            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
+            id="project"
+            sx={{
+              "&:hover": {
+                boxShadow:
+                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                backgroundColor: "rgba(255, 255, 255, 0.008)",
+              },
+            }}
+          >
+            <Box
+              className="flex gap-3 text-white"
+              sx={{
+                "@media(max-width:600px)": {
+                  display: "flex",
+                  flexDirection: "column",
+                },
+              }}
+            >
+              <Image
+                src={quiz}
+                alt="quiz"
+                style={{
+                  width: "180px",
+                  height: "100px",
+                  paddingRight: "30px",
+                }}
+              />
+              <Box>
+                <div className="flex text-white font-bold mb-2 gap-2">
+                  <p>Probe App</p>
+                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
+                </div>
+                <div>
+                  <p className="mb-4">
+                    Probe is an online MCQ Test platform in which, showing one
+                    question at a time in front of the user. Including features
+                    like question navigation and real time scores.
+                  </p>
+                  <div className="flex gap-2 p-1 my-3 flex-wrap">
+                    <Button variant="outlined">React</Button>
+                    <Button variant="outlined">JavaScript</Button>
+                    <Button variant="outlined">Bootstrap</Button>
+                    <Button variant="outlined">API</Button>
+                  </div>
+                </div>
+              </Box>
+            </Box>
+          </Box>
+        </a>
+
         <a href="https://nom-nom-nomad.vercel.app/">
           <Box
             className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
@@ -371,59 +480,6 @@ const Draken = () => {
                     <Button variant="outlined">JavaScript</Button>
                     <Button variant="outlined">Bootstrap</Button>
                     <Button variant="outlined">Gen AI</Button>
-                  </div>
-                </div>
-              </Box>
-            </Box>
-          </Box>
-        </a>
-
-        <a href="https://probe-five.vercel.app/">
-          <Box
-            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
-            id="project"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
-            <Box
-              className="flex gap-3 text-white"
-              sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
-                },
-              }}
-            >
-              <Image
-                src={quiz}
-                alt="quiz"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
-                }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>Probe App</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    Probe is an online MCQ Test platform in which, showing one
-                    question at a time in front of the user. Including features
-                    like question navigation and real time scores.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">React</Button>
-                    <Button variant="outlined">JavaScript</Button>
-                    <Button variant="outlined">Bootstrap</Button>
-                    <Button variant="outlined">API</Button>
                   </div>
                 </div>
               </Box>
@@ -642,10 +698,10 @@ const Draken = () => {
                 <div>
                   Other
                   <div className="flex gap-2 p-1 my-3 flex-wrap">
+                    <Button variant="outlined">Machine Learning</Button>
                     <Button variant="outlined">MongoDB</Button>
                     <Button variant="outlined">AWS</Button>
                     <Button variant="outlined">Postman</Button>
-                    <Button variant="outlined">AI-ML</Button>
                   </div>
                 </div>
               </Box>
@@ -667,12 +723,12 @@ const Draken = () => {
             building production oriented platforms.
           </p>
           <p style={{ color: "#7B899D" }} className="p-2">
-            My Engineering made me forget everything so now I am a Full-Stack
-            Engineer building scalable web platforms and AI driven systems.
+            I am a Full-Stack Engineer building scalable web platforms and AI
+            driven systems.
           </p>
           <p style={{ color: "#7B899D" }} className="p-2">
-            I play basketball and chess. I read books and play guitar and mouth
-            organ.
+            I play basketball and chess. I read books and learning guitar &
+            mouth organ.
           </p>
         </Box>
 
