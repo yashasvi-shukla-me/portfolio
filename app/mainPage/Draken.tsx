@@ -7,6 +7,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import codeforge from "../assets/codeforge.png";
 import ames from "../assets/ames.png";
 import resume from "../assets/resume.png";
+import mlops from "../assets/mlops.png";
 import news from "../assets/news.png";
 import docs from "../assets/docs.jpeg";
 import quiz from "../assets/quiz.jpeg";
@@ -29,10 +30,10 @@ const Draken = () => {
       <Grid item xl={6} md={6} lg={6} sm={12} className="relative">
         <div className="static lg:fixed">
           <Box className="w-full md:p-14 p-4 flex flex-col items-start">
-            <h1 className="text-white">Yashasvi Shukla 🐦‍🔥</h1>
+            <h1 className="text-white">Yashasvi Shukla. ⚡️ </h1>
             <br></br>
             <h3 className="text-white">
-              A Web Developer with Python toppings !
+              Full Stack Engineer building scalable systems and AI
             </h3>
             <p style={{ color: "#7B899D" }}>
               I build clean and scalable products with strong engineering
@@ -97,10 +98,10 @@ const Draken = () => {
                 </div>
                 <div>
                   <p className="mb-4">
-                    Designed and developed a production ready online judge
-                    platform supporting real-time code execution, problem
-                    management with secure multi language compilation using
-                    Judge0 and a scalable full stack architecture.
+                    Designed and engineered a production ready online judge
+                    platform with real-time code execution, secure multi
+                    language compilation via Judge0, and a scalable full stack
+                    architecture.
                   </p>
                   <div className="flex gap-2 p-1 my-3 flex-wrap">
                     <Button variant="outlined">Judge0 API</Button>
@@ -152,10 +153,10 @@ const Draken = () => {
                 </div>
                 <div>
                   <p className="mb-4">
-                    Built an end-to-end ML system that parses PDF resumes,
+                    Engineered an end-to-end ML system that parses resumes,
                     performs NLP-based skill extraction, computes role fit
-                    scoring, and provides AI driven feedback via a full stack
-                    web interface.
+                    scoring, and delivers AI driven feedback through a full
+                    stack web interface.
                   </p>
                   <div className="flex gap-2 p-1 my-3 flex-wrap">
                     <Button variant="outlined">Machine Learning</Button>
@@ -163,6 +164,63 @@ const Draken = () => {
                     <Button variant="outlined">FastAPI</Button>
                     <Button variant="outlined">NLP</Button>
                     <Button variant="outlined">Docker</Button>
+                  </div>
+                </div>
+              </Box>
+            </Box>
+          </Box>
+        </a>
+
+        <a href="https://github.com/yashasvi-shukla-me/ModelForge">
+          <Box
+            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
+            id="project"
+            sx={{
+              "&:hover": {
+                boxShadow:
+                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                backgroundColor: "rgba(255, 255, 255, 0.008)",
+              },
+            }}
+          >
+            <Box
+              className="flex gap-3 text-white"
+              sx={{
+                "@media(max-width:600px)": {
+                  display: "flex",
+                  flexDirection: "column",
+                },
+              }}
+            >
+              <Image
+                src={mlops}
+                alt="mlops"
+                style={{
+                  width: "180px",
+                  height: "100px",
+                  paddingRight: "30px",
+                }}
+              />
+              <Box>
+                <div className="flex text-white font-bold mb-2 gap-2">
+                  <p>ModelForge</p>
+                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
+                </div>
+                <div>
+                  <p className="mb-4">
+                    Engineered a production grade AutoML and MLOps platform to
+                    train, track, and deploy models with experiment versioning,
+                    metrics comparison, and Dockerized deployments, enabling
+                    scalable and reproducible ML pipelines.
+                  </p>
+                  <div className="flex gap-2 p-1 my-3 flex-wrap">
+                    <Button variant="outlined">FastAPI</Button>
+                    <Button variant="outlined">Python</Button>
+                    <Button variant="outlined">Prometheus</Button>
+                    <Button variant="outlined">Docker</Button>
+                    <Button variant="outlined">MongoDB</Button>
+                    <Button variant="outlined">MLflow</Button>
+                    <Button variant="outlined">React</Button>
                   </div>
                 </div>
               </Box>
@@ -314,8 +372,8 @@ const Draken = () => {
                   <p className="mb-4">
                     It is a Kanban board with a Matrix style background,
                     offering intuitive drag and drop, editing and deleting task
-                    management in a terminal-like interface. Has local storage
-                    support.
+                    management in a terminal-like interface. Includes local
+                    storage persistence.
                   </p>
                   <div className="flex gap-2 p-1 my-3 flex-wrap">
                     <Button variant="outlined">Local Storage</Button>
@@ -366,9 +424,10 @@ const Draken = () => {
                 </div>
                 <div>
                   <p className="mb-4">
-                    Probe is an online MCQ Test platform in which, showing one
-                    question at a time in front of the user. Including features
-                    like question navigation and real time scores.
+                    Probe is an online MCQ Test platform in which, presents one
+                    question at a time with navigation and real-time scoring.
+                    Including features like question navigation and real time
+                    scores.
                   </p>
                   <div className="flex gap-2 p-1 my-3 flex-wrap">
                     <Button variant="outlined">React</Button>
@@ -727,8 +786,8 @@ const Draken = () => {
             driven systems.
           </p>
           <p style={{ color: "#7B899D" }} className="p-2">
-            I play basketball and chess. I read books and learning guitar &
-            mouth organ.
+            Outside tech, I enjoy basketball, chess, reading, and learning
+            guitar.
           </p>
         </Box>
 
@@ -766,7 +825,7 @@ const Draken = () => {
           className="w-full p-14 md:text-base text-sm"
           style={{ color: "#7B899D" }}
         >
-          Made on Visual Studio. Deployed using (ChatGPT) on Netlify
+          Built with Next.js and TypeScript. Deployed on Netlify.
         </p>
       </Grid>
     </Grid>
