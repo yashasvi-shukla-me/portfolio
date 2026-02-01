@@ -30,7 +30,7 @@ const Draken = () => {
       <Grid item xl={6} md={6} lg={6} sm={12} className="relative">
         <div className="static lg:fixed">
           <Box className="w-full md:p-14 p-4 flex flex-col items-start">
-            <h1 className="text-white">Yashasvi Shukla. ⚡️ </h1>
+            <h1 className="text-white">Yashasvi Shukla. </h1>
             <br></br>
             <h3 className="text-white">
               Full Stack Engineer building scalable systems and AI
