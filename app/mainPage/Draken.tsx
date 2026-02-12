@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+
 import Grid from "@mui/material/Grid";
 import { Box } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -24,7 +25,37 @@ import About from "../ClientComponents/About";
 import Skills from "../ClientComponents/Skills";
 import Project from "../ClientComponents/Project";
 
+import React, { useEffect, useContext } from "react";
+import { UserContext } from "../page";
+
 const Draken = () => {
+  const { dispatch } = useContext(UserContext);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["pro", "exp", "abt"];
+
+      sections.forEach((id) => {
+        const element = document.getElementById(id);
+        if (!element) return;
+
+        const rect = element.getBoundingClientRect();
+
+        if (
+          rect.top <= window.innerHeight * 0.4 &&
+          rect.bottom >= window.innerHeight * 0.4
+        ) {
+          dispatch({ type: id as any, payload: id });
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [dispatch]);
+
   return (
     <Grid container spacing={1}>
       <Grid item xl={6} md={6} lg={6} sm={12} className="relative">
@@ -61,720 +92,739 @@ const Draken = () => {
           Projects
         </span>
 
-        <a href="https://codeforge-theta.vercel.app/">
-          <Box
-            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
-            id="project"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
+        <Box id="pro" className="w-full">
+          <a href="https://codeforge-theta.vercel.app/">
             <Box
-              className="flex gap-3 text-white"
+              className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
               sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
+                "&:hover": {
+                  boxShadow:
+                    "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                  backgroundColor: "rgba(255, 255, 255, 0.008)",
                 },
               }}
             >
-              <Image
-                src={codeforge}
-                alt="codeforge"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
+              <Box
+                className="flex flex-col text-white"
+                sx={{
+                  "@media(max-width:600px)": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
                 }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>CodeForge</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    Designed and engineered a production ready online judge
-                    platform with real-time code execution, secure multi
-                    language compilation via Judge0, and a scalable full stack
-                    architecture.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">Judge0 API</Button>
-                    <Button variant="outlined">React</Button>
-                    <Button variant="outlined">Node.js</Button>
-                    <Button variant="outlined">MongoDB</Button>
-                    <Button variant="outlined">Docker</Button>
-                  </div>
-                </div>
-              </Box>
-            </Box>
-          </Box>
-        </a>
+              >
+                <Image
+                  src={codeforge}
+                  alt="CodeForge dashboard"
+                  className="rounded-xl shadow-2xl mb-6"
+                  style={{
+                    width: "100%",
+                    height: "280px",
+                    objectFit: "cover",
+                  }}
+                />
 
-        <a href="https://talentforge-one.vercel.app/">
-          <Box
-            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
-            id="project"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
-            <Box
-              className="flex gap-3 text-white"
-              sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
-                },
-              }}
-            >
-              <Image
-                src={resume}
-                alt="resume"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
-                }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>TalentForge</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    Engineered an end-to-end ML system that parses resumes,
-                    performs NLP-based skill extraction, computes role fit
-                    scoring, and delivers AI driven feedback through a full
-                    stack web interface.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">Machine Learning</Button>
-                    <Button variant="outlined">React</Button>
-                    <Button variant="outlined">FastAPI</Button>
-                    <Button variant="outlined">NLP</Button>
-                    <Button variant="outlined">Docker</Button>
+                <Box>
+                  <div className="flex text-white font-bold text-xl mb-2 gap-2">
+                    <p>CodeForge</p>
+                    <ArrowOutwardIcon sx={{ color: "#fff" }} />
                   </div>
-                </div>
-              </Box>
-            </Box>
-          </Box>
-        </a>
+                  <div>
+                    <p className="mb-4 text-lg font-medium">
+                      Production-ready online judge platform with real-time
+                      execution and scalable architecture.
+                    </p>
 
-        <a href="https://github.com/yashasvi-shukla-me/ModelForge">
-          <Box
-            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
-            id="project"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
-            <Box
-              className="flex gap-3 text-white"
-              sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
-                },
-              }}
-            >
-              <Image
-                src={mlops}
-                alt="mlops"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
-                }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>ModelForge</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    Engineered a production grade AutoML and MLOps platform to
-                    train, track, and deploy models with experiment versioning,
-                    metrics comparison, and Dockerized deployments, enabling
-                    scalable and reproducible ML pipelines.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">FastAPI</Button>
-                    <Button variant="outlined">Python</Button>
-                    <Button variant="outlined">Prometheus</Button>
-                    <Button variant="outlined">Docker</Button>
-                    <Button variant="outlined">MongoDB</Button>
-                    <Button variant="outlined">MLflow</Button>
-                    <Button variant="outlined">React</Button>
-                  </div>
-                </div>
-              </Box>
-            </Box>
-          </Box>
-        </a>
+                    <ul className="text-sm text-gray-400 space-y-2 mb-4">
+                      <li>• Secure multi-language execution using Judge0</li>
+                      <li>
+                        • Scalable full-stack architecture with authentication
+                      </li>
+                      <li>
+                        • Problem tagging, filtering, playlists and submission
+                        tracking
+                      </li>
+                    </ul>
 
-        <a href="https://ames-house-price-predict.netlify.app/">
-          <Box
-            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
-            id="project"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
-            <Box
-              className="flex gap-3 text-white"
-              sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
-                },
-              }}
-            >
-              <Image
-                src={ames}
-                alt="ames.png"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
-                }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>Ames House Price Predictor</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    An end to end ML application that predicts house prices
-                    using the Ames dataset, featuring production ready inference
-                    with a FastAPI backend and web frontend.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">ML</Button>
-                    <Button variant="outlined">Gradient Boosting</Button>
-                    <Button variant="outlined">JavaScript</Button>
-                    <Button variant="outlined">FastAPI</Button>
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">Judge0 API</Button>
+                      <Button variant="outlined">React</Button>
+                      <Button variant="outlined">Node.js</Button>
+                      <Button variant="outlined">MongoDB</Button>
+                      <Button variant="outlined">Docker</Button>
+                    </div>
                   </div>
-                </div>
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </a>
+          </a>
 
-        <a href="https://the-chronicles.vercel.app/">
-          <Box
-            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
-            id="project"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
+          <a href="https://talentforge-one.vercel.app/">
             <Box
-              className="flex gap-3 text-white"
+              className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
               sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
+                "&:hover": {
+                  boxShadow:
+                    "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                  backgroundColor: "rgba(255, 255, 255, 0.008)",
                 },
               }}
             >
-              <Image
-                src={news}
-                alt="news"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
+              <Box
+                className="flex flex-col text-white"
+                sx={{
+                  "@media(max-width:600px)": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
                 }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>The Chronicles</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    Stay informed with our React powered news app, leveraging
-                    the News API and React Hooks for real time updates. Explore
-                    diverse news categories seamlessly.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">News API</Button>
-                    <Button variant="outlined">React</Button>
-                    <Button variant="outlined">JavaScript</Button>
+              >
+                <Image
+                  src={resume}
+                  alt="TalentForge dashboard"
+                  className="rounded-xl shadow-2xl mb-6"
+                  style={{
+                    width: "100%",
+                    height: "280px",
+                    objectFit: "cover",
+                  }}
+                />
+                <Box>
+                  <div className="flex text-white font-bold text-xl mb-3 gap-2">
+                    <p>TalentForge</p>
+                    <ArrowOutwardIcon sx={{ color: "#fff" }} />
                   </div>
-                </div>
-              </Box>
-            </Box>
-          </Box>
-        </a>
+                  <div>
+                    <p className="mb-4 text-lg font-medium">
+                      AI-powered resume intelligence platform with ATS matching
+                      and skill extraction.
+                    </p>
 
-        <a href="https://kanbanix.vercel.app/">
-          <Box
-            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
-            id="project"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
-            <Box
-              className="flex gap-3 text-white"
-              sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
-                },
-              }}
-            >
-              <Image
-                src={todo}
-                alt="todo"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
-                }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>Kanbanix</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    It is a Kanban board with a Matrix style background,
-                    offering intuitive drag and drop, editing and deleting task
-                    management in a terminal-like interface. Includes local
-                    storage persistence.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">Local Storage</Button>
-                    <Button variant="outlined">HTML</Button>
-                    <Button variant="outlined">CSS</Button>
-                    <Button variant="outlined">JavaScript</Button>
+                    <ul className="text-sm text-gray-400 space-y-2 mb-4">
+                      <li>
+                        • NLP-based skill extraction and semantic matching
+                      </li>
+                      <li>• Resume scoring engine with role-fit computation</li>
+                      <li>
+                        • FastAPI backend with scalable model inference pipeline
+                      </li>
+                      <li>• Dockerized deployment for reproducibility</li>
+                    </ul>
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">Machine Learning</Button>
+                      <Button variant="outlined">React</Button>
+                      <Button variant="outlined">FastAPI</Button>
+                      <Button variant="outlined">NLP</Button>
+                      <Button variant="outlined">Docker</Button>
+                    </div>
                   </div>
-                </div>
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </a>
+          </a>
 
-        <a href="https://probe-five.vercel.app/">
-          <Box
-            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
-            id="project"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
+          <a href="https://github.com/yashasvi-shukla-me/ModelForge">
             <Box
-              className="flex gap-3 text-white"
+              className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
               sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
+                "&:hover": {
+                  boxShadow:
+                    "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                  backgroundColor: "rgba(255, 255, 255, 0.008)",
                 },
               }}
             >
-              <Image
-                src={quiz}
-                alt="quiz"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
+              <Box
+                className="flex flex-col text-white"
+                sx={{
+                  "@media(max-width:600px)": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
                 }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>Probe App</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    Probe is an online MCQ Test platform in which, presents one
-                    question at a time with navigation and real-time scoring.
-                    Including features like question navigation and real time
-                    scores.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">React</Button>
-                    <Button variant="outlined">JavaScript</Button>
-                    <Button variant="outlined">Bootstrap</Button>
-                    <Button variant="outlined">API</Button>
+              >
+                <Image
+                  src={mlops}
+                  alt="ModelForge dashboard"
+                  className="rounded-xl shadow-2xl mb-6"
+                  style={{
+                    width: "100%",
+                    height: "280px",
+                    objectFit: "cover",
+                  }}
+                />
+                <Box>
+                  <div className="flex text-white font-bold text-xl mb-3 gap-2">
+                    <p>ModelForge</p>
+                    <ArrowOutwardIcon sx={{ color: "#fff" }} />
                   </div>
-                </div>
-              </Box>
-            </Box>
-          </Box>
-        </a>
+                  <div>
+                    <p className="mb-4 text-lg font-medium">
+                      Production-grade AutoML and MLOps platform for experiment
+                      tracking and model deployment.
+                    </p>
 
-        <a href="https://nom-nom-nomad.vercel.app/">
-          <Box
-            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
-            id="project"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
-            <Box
-              className="flex gap-3 text-white"
-              sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
-                },
-              }}
-            >
-              <Image
-                src={food}
-                alt="food"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
-                }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>Nom Nom Nomad</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    Indulge effortlessly with our React based food delivery app
-                    crafted with Vite. Perfect example of modern web development
-                    practices.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">React</Button>
-                    <Button variant="outlined">JavaScript</Button>
-                    <Button variant="outlined">Hooks</Button>
+                    <ul className="text-sm text-gray-400 space-y-2 mb-4">
+                      <li>• Experiment versioning and metric comparison</li>
+                      <li>• MLflow-style tracking with persistent storage</li>
+                      <li>• Dockerized model deployment pipeline</li>
+                      <li>• Scalable FastAPI backend for training workflows</li>
+                    </ul>
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">FastAPI</Button>
+                      <Button variant="outlined">Python</Button>
+                      <Button variant="outlined">Prometheus</Button>
+                      <Button variant="outlined">Docker</Button>
+                      <Button variant="outlined">MongoDB</Button>
+                      <Button variant="outlined">MLflow</Button>
+                      <Button variant="outlined">React</Button>
+                    </div>
                   </div>
-                </div>
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </a>
+          </a>
 
-        <a href="https://gemini-clone-taupe.vercel.app/">
-          <Box
-            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
-            id="project"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
+          <a href="https://ames-house-price-predict.netlify.app/">
             <Box
-              className="flex gap-3 text-white"
+              className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
               sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
+                "&:hover": {
+                  boxShadow:
+                    "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                  backgroundColor: "rgba(255, 255, 255, 0.008)",
                 },
               }}
             >
-              <Image
-                src={gemini}
-                alt="gemini"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
+              <Box
+                className="flex gap-3 text-white"
+                sx={{
+                  "@media(max-width:600px)": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
                 }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>Gemini Clone</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    Ask away your questions and do not leave until satisfied. A
-                    sleek, fast, and customizable Gemini protocol client crafted
-                    with React and Vite.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">React</Button>
-                    <Button variant="outlined">JavaScript</Button>
-                    <Button variant="outlined">Bootstrap</Button>
-                    <Button variant="outlined">Gen AI</Button>
+              >
+                <Image
+                  src={ames}
+                  alt="ames.png"
+                  style={{
+                    width: "180px",
+                    height: "100px",
+                    paddingRight: "30px",
+                  }}
+                />
+                <Box>
+                  <div className="flex text-white font-bold mb-2 gap-2">
+                    <p>Ames House Price Predictor</p>
+                    <ArrowOutwardIcon sx={{ color: "#fff" }} />
                   </div>
-                </div>
+                  <div>
+                    <p className="mb-4">
+                      An end to end ML application that predicts house prices
+                      using the Ames dataset, featuring production ready
+                      inference with a FastAPI backend and web frontend.
+                    </p>
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">ML</Button>
+                      <Button variant="outlined">Gradient Boosting</Button>
+                      <Button variant="outlined">JavaScript</Button>
+                      <Button variant="outlined">FastAPI</Button>
+                    </div>
+                  </div>
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </a>
+          </a>
 
-        <a href="https://rochambeau-jade.vercel.app/">
-          <Box
-            className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
-            id="project"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
+          <a href="https://the-chronicles.vercel.app/">
             <Box
-              className="flex gap-3 text-white"
+              className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
               sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
+                "&:hover": {
+                  boxShadow:
+                    "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                  backgroundColor: "rgba(255, 255, 255, 0.008)",
                 },
               }}
             >
-              <Image
-                src={sps}
-                alt="sps"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
+              <Box
+                className="flex gap-3 text-white"
+                sx={{
+                  "@media(max-width:600px)": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
                 }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>Rochambeau</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    Compete against the computer in a battle of wits and luck.
-                    With intuitive controls and engaging gameplay.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">Development</Button>
-                    <Button variant="outlined">JavaScript</Button>
-                    <Button variant="outlined">HTML</Button>
-                    <Button variant="outlined">CSS</Button>
+              >
+                <Image
+                  src={news}
+                  alt="news"
+                  style={{
+                    width: "180px",
+                    height: "100px",
+                    paddingRight: "30px",
+                  }}
+                />
+                <Box>
+                  <div className="flex text-white font-bold mb-2 gap-2">
+                    <p>The Chronicles</p>
+                    <ArrowOutwardIcon sx={{ color: "#fff" }} />
                   </div>
-                </div>
+                  <div>
+                    <p className="mb-4">
+                      Stay informed with our React powered news app, leveraging
+                      the News API and React Hooks for real time updates.
+                      Explore diverse news categories seamlessly.
+                    </p>
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">News API</Button>
+                      <Button variant="outlined">React</Button>
+                      <Button variant="outlined">JavaScript</Button>
+                    </div>
+                  </div>
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </a>
+          </a>
 
-        <a href="https://docket-docs.vercel.app/">
-          <Box
-            className="w-full md:p-14 p-6 flex flex-col items-start cursor-pointer mb-4"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
+          <a href="https://kanbanix.vercel.app/">
             <Box
-              className="flex gap-3 text-white"
+              className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
               sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
+                "&:hover": {
+                  boxShadow:
+                    "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                  backgroundColor: "rgba(255, 255, 255, 0.008)",
                 },
               }}
             >
-              <Image
-                src={docs}
-                alt="docs"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
+              <Box
+                className="flex gap-3 text-white"
+                sx={{
+                  "@media(max-width:600px)": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
                 }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>Docket Docs</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    Experience seamless note taking with our Docs Note app,
-                    enhanced with Framer Motion animations for a smooth and
-                    engaging user experience. Built efficiently.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">React</Button>
-                    <Button variant="outlined">TypeScript</Button>
-                    <Button variant="outlined">Framer Motion</Button>
-                    <Button variant="outlined">Tailwind</Button>
+              >
+                <Image
+                  src={todo}
+                  alt="todo"
+                  style={{
+                    width: "180px",
+                    height: "100px",
+                    paddingRight: "30px",
+                  }}
+                />
+                <Box>
+                  <div className="flex text-white font-bold mb-2 gap-2">
+                    <p>Kanbanix</p>
+                    <ArrowOutwardIcon sx={{ color: "#fff" }} />
                   </div>
-                </div>
+                  <div>
+                    <p className="mb-4">
+                      It is a Kanban board with a Matrix style background,
+                      offering intuitive drag and drop, editing and deleting
+                      task management in a terminal-like interface. Includes
+                      local storage persistence.
+                    </p>
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">Local Storage</Button>
+                      <Button variant="outlined">HTML</Button>
+                      <Button variant="outlined">CSS</Button>
+                      <Button variant="outlined">JavaScript</Button>
+                    </div>
+                  </div>
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </a>
+          </a>
 
-        <a href="https://noughts-and-crosses-gilt.vercel.app/">
-          <Box
-            className="w-full md:p-14 p-6 flex flex-col items-start cursor-pointer mb-4"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-              },
-            }}
-          >
+          <a href="https://probe-five.vercel.app/">
             <Box
-              className="flex gap-3 text-white"
+              className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
               sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
+                "&:hover": {
+                  boxShadow:
+                    "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                  backgroundColor: "rgba(255, 255, 255, 0.008)",
                 },
               }}
             >
-              <Image
-                src={tick}
-                alt="tick"
-                style={{
-                  width: "180px",
-                  height: "100px",
-                  paddingRight: "30px",
+              <Box
+                className="flex gap-3 text-white"
+                sx={{
+                  "@media(max-width:600px)": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
                 }}
-              />
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>Noughts and Crosses</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                </div>
-                <div>
-                  <p className="mb-4">
-                    Implemented a classic online Tic Tac Toe game using merely
-                    JavaScript. Have fun playing against another player.
-                  </p>
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">Development</Button>
-                    <Button variant="outlined">JavaScript</Button>
-                    <Button variant="outlined">HTML</Button>
-                    <Button variant="outlined">CSS</Button>
+              >
+                <Image
+                  src={quiz}
+                  alt="quiz"
+                  style={{
+                    width: "180px",
+                    height: "100px",
+                    paddingRight: "30px",
+                  }}
+                />
+                <Box>
+                  <div className="flex text-white font-bold mb-2 gap-2">
+                    <p>Probe App</p>
+                    <ArrowOutwardIcon sx={{ color: "#fff" }} />
                   </div>
-                </div>
+                  <div>
+                    <p className="mb-4">
+                      Probe is an online MCQ Test platform in which, presents
+                      one question at a time with navigation and real-time
+                      scoring. Including features like question navigation and
+                      real time scores.
+                    </p>
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">React</Button>
+                      <Button variant="outlined">JavaScript</Button>
+                      <Button variant="outlined">Bootstrap</Button>
+                      <Button variant="outlined">API</Button>
+                    </div>
+                  </div>
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </a>
+          </a>
+
+          <a href="https://nom-nom-nomad.vercel.app/">
+            <Box
+              className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
+              sx={{
+                "&:hover": {
+                  boxShadow:
+                    "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                  backgroundColor: "rgba(255, 255, 255, 0.008)",
+                },
+              }}
+            >
+              <Box
+                className="flex gap-3 text-white"
+                sx={{
+                  "@media(max-width:600px)": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
+                }}
+              >
+                <Image
+                  src={food}
+                  alt="food"
+                  style={{
+                    width: "180px",
+                    height: "100px",
+                    paddingRight: "30px",
+                  }}
+                />
+                <Box>
+                  <div className="flex text-white font-bold mb-2 gap-2">
+                    <p>Nom Nom Nomad</p>
+                    <ArrowOutwardIcon sx={{ color: "#fff" }} />
+                  </div>
+                  <div>
+                    <p className="mb-4">
+                      Indulge effortlessly with our React based food delivery
+                      app crafted with Vite. Perfect example of modern web
+                      development practices.
+                    </p>
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">React</Button>
+                      <Button variant="outlined">JavaScript</Button>
+                      <Button variant="outlined">Hooks</Button>
+                    </div>
+                  </div>
+                </Box>
+              </Box>
+            </Box>
+          </a>
+
+          <a href="https://gemini-clone-taupe.vercel.app/">
+            <Box
+              className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
+              sx={{
+                "&:hover": {
+                  boxShadow:
+                    "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                  backgroundColor: "rgba(255, 255, 255, 0.008)",
+                },
+              }}
+            >
+              <Box
+                className="flex gap-3 text-white"
+                sx={{
+                  "@media(max-width:600px)": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
+                }}
+              >
+                <Image
+                  src={gemini}
+                  alt="gemini"
+                  style={{
+                    width: "180px",
+                    height: "100px",
+                    paddingRight: "30px",
+                  }}
+                />
+                <Box>
+                  <div className="flex text-white font-bold mb-2 gap-2">
+                    <p>Gemini Clone</p>
+                    <ArrowOutwardIcon sx={{ color: "#fff" }} />
+                  </div>
+                  <div>
+                    <p className="mb-4">
+                      Ask away your questions and do not leave until satisfied.
+                      A sleek, fast, and customizable Gemini protocol client
+                      crafted with React and Vite.
+                    </p>
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">React</Button>
+                      <Button variant="outlined">JavaScript</Button>
+                      <Button variant="outlined">Bootstrap</Button>
+                      <Button variant="outlined">Gen AI</Button>
+                    </div>
+                  </div>
+                </Box>
+              </Box>
+            </Box>
+          </a>
+
+          <a href="https://rochambeau-jade.vercel.app/">
+            <Box
+              className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
+              sx={{
+                "&:hover": {
+                  boxShadow:
+                    "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                  backgroundColor: "rgba(255, 255, 255, 0.008)",
+                },
+              }}
+            >
+              <Box
+                className="flex gap-3 text-white"
+                sx={{
+                  "@media(max-width:600px)": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
+                }}
+              >
+                <Image
+                  src={sps}
+                  alt="sps"
+                  style={{
+                    width: "180px",
+                    height: "100px",
+                    paddingRight: "30px",
+                  }}
+                />
+                <Box>
+                  <div className="flex text-white font-bold mb-2 gap-2">
+                    <p>Rochambeau</p>
+                    <ArrowOutwardIcon sx={{ color: "#fff" }} />
+                  </div>
+                  <div>
+                    <p className="mb-4">
+                      Compete against the computer in a battle of wits and luck.
+                      With intuitive controls and engaging gameplay.
+                    </p>
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">Development</Button>
+                      <Button variant="outlined">JavaScript</Button>
+                      <Button variant="outlined">HTML</Button>
+                      <Button variant="outlined">CSS</Button>
+                    </div>
+                  </div>
+                </Box>
+              </Box>
+            </Box>
+          </a>
+
+          <a href="https://docket-docs.vercel.app/">
+            <Box
+              className="w-full md:p-14 p-6 flex flex-col items-start cursor-pointer mb-4"
+              sx={{
+                "&:hover": {
+                  boxShadow:
+                    "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                  backgroundColor: "rgba(255, 255, 255, 0.008)",
+                },
+              }}
+            >
+              <Box
+                className="flex gap-3 text-white"
+                sx={{
+                  "@media(max-width:600px)": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
+                }}
+              >
+                <Image
+                  src={docs}
+                  alt="docs"
+                  style={{
+                    width: "180px",
+                    height: "100px",
+                    paddingRight: "30px",
+                  }}
+                />
+                <Box>
+                  <div className="flex text-white font-bold mb-2 gap-2">
+                    <p>Docket Docs</p>
+                    <ArrowOutwardIcon sx={{ color: "#fff" }} />
+                  </div>
+                  <div>
+                    <p className="mb-4">
+                      Experience seamless note taking with our Docs Note app,
+                      enhanced with Framer Motion animations for a smooth and
+                      engaging user experience. Built efficiently.
+                    </p>
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">React</Button>
+                      <Button variant="outlined">TypeScript</Button>
+                      <Button variant="outlined">Framer Motion</Button>
+                      <Button variant="outlined">Tailwind</Button>
+                    </div>
+                  </div>
+                </Box>
+              </Box>
+            </Box>
+          </a>
+
+          <a href="https://noughts-and-crosses-gilt.vercel.app/">
+            <Box
+              className="w-full md:p-14 p-6 flex flex-col items-start cursor-pointer mb-4"
+              sx={{
+                "&:hover": {
+                  boxShadow:
+                    "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                  backgroundColor: "rgba(255, 255, 255, 0.008)",
+                },
+              }}
+            >
+              <Box
+                className="flex gap-3 text-white"
+                sx={{
+                  "@media(max-width:600px)": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
+                }}
+              >
+                <Image
+                  src={tick}
+                  alt="tick"
+                  style={{
+                    width: "180px",
+                    height: "100px",
+                    paddingRight: "30px",
+                  }}
+                />
+                <Box>
+                  <div className="flex text-white font-bold mb-2 gap-2">
+                    <p>Noughts and Crosses</p>
+                    <ArrowOutwardIcon sx={{ color: "#fff" }} />
+                  </div>
+                  <div>
+                    <p className="mb-4">
+                      Implemented a classic online Tic Tac Toe game using merely
+                      JavaScript. Have fun playing against another player.
+                    </p>
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">Development</Button>
+                      <Button variant="outlined">JavaScript</Button>
+                      <Button variant="outlined">HTML</Button>
+                      <Button variant="outlined">CSS</Button>
+                    </div>
+                  </div>
+                </Box>
+              </Box>
+            </Box>
+          </a>
+        </Box>
 
         <span className=" md:p-14 md:hidden block p-6 text-white cursor-pointer font-bold">
           Skills
         </span>
-        <a href="https://github.com/yashasvi-shukla-me?tab=repositories">
-          <Box
-            className="w-full md:p-14 p-6 flex flex-col items-start cursor-pointer mb-4"
-            id="exp"
-            sx={{
-              "&:hover": {
-                boxShadow:
-                  "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-                backgroundColor: "rgba(255, 255, 255, 0.008)",
-                width: "100%",
-              },
-            }}
-          >
+        <Box id="exp" className="w-full">
+          <a href="https://github.com/yashasvi-shukla-me?tab=repositories">
             <Box
-              className="flex gap-3 text-white"
+              className="w-full md:p-14 p-6 flex flex-col items-start cursor-pointer mb-4"
               sx={{
-                "@media(max-width:600px)": {
-                  display: "flex",
-                  flexDirection: "column",
+                "&:hover": {
+                  boxShadow:
+                    "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+                  backgroundColor: "rgba(255, 255, 255, 0.008)",
+                  width: "100%",
                 },
               }}
             >
-              <p className="w-100 whitespace-nowrap">2019-2026</p>
+              <Box
+                className="flex gap-3 text-white"
+                sx={{
+                  "@media(max-width:600px)": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
+                }}
+              >
+                <p className="w-100 whitespace-nowrap">2019-2026</p>
 
-              <Box>
-                <div className="flex text-white font-bold mb-2 gap-2">
-                  <p>Post Grad, Grad. Developer</p>
-                  <ArrowOutwardIcon sx={{ color: "#fff" }} />
-                  <br></br>
-                  <br></br>
-                </div>
+                <Box>
+                  <div className="flex text-white font-bold mb-2 gap-2">
+                    <p>Post Grad, Grad. Developer</p>
+                    <ArrowOutwardIcon sx={{ color: "#fff" }} />
+                    <br></br>
+                    <br></br>
+                  </div>
 
-                <div>
-                  Languages
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">Python</Button>
-                    <Button variant="outlined">JavaScript</Button>
-                    <Button variant="outlined">SQL </Button>
+                  <div>
+                    Languages
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">Python</Button>
+                      <Button variant="outlined">JavaScript</Button>
+                      <Button variant="outlined">SQL </Button>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  Technologies
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">React</Button>
-                    <Button variant="outlined">Express</Button>
-                    <Button variant="outlined">Docker</Button>
-                    <Button variant="outlined">Node.JS</Button>
-                    <Button variant="outlined">API</Button>
+                  <div>
+                    Technologies
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">React</Button>
+                      <Button variant="outlined">Express</Button>
+                      <Button variant="outlined">Docker</Button>
+                      <Button variant="outlined">Node.JS</Button>
+                      <Button variant="outlined">API</Button>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  Other
-                  <div className="flex gap-2 p-1 my-3 flex-wrap">
-                    <Button variant="outlined">Machine Learning</Button>
-                    <Button variant="outlined">MongoDB</Button>
-                    <Button variant="outlined">AWS</Button>
-                    <Button variant="outlined">Postman</Button>
+                  <div>
+                    Other
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">Machine Learning</Button>
+                      <Button variant="outlined">MongoDB</Button>
+                      <Button variant="outlined">AWS</Button>
+                      <Button variant="outlined">Postman</Button>
+                    </div>
                   </div>
-                </div>
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </a>
+          </a>
+        </Box>
 
         <span className=" md:p-14 md:hidden block p-6 text-white cursor-pointer font-bold">
           About
         </span>
-        <Box
-          className="w-full md:p-14 p-4 flex flex-col items-start "
-          id="about"
-        >
+
+        <Box className="w-full md:p-14 p-4 flex flex-col items-start " id="abt">
           <p style={{ color: "#7B899D" }} className="p-2">
             I completed my schooling from Lucknow then did my graduation and
             currently pursuing my masters. I am strengthening my foundations in
