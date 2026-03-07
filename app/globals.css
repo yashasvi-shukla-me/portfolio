@@ -12,6 +12,10 @@
     font-size: 16px;
 }
 
+.font-heading {
+    font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+}
+
 h1 {
     display: block;
     font-size: 2em;

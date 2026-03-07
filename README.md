@@ -1,45 +1,74 @@
-# Portfolio Website
+# Portfolio
 
-Personal portfolio built with Next.js and TypeScript to showcase my projects, skills, and experience.
+A minimal, responsive portfolio site built with Next.js and TypeScript. Showcases projects, technical skills, and background—deployed as a static-friendly SPA.
 
-Live Demo: https://portfolio-yashasvishukla.netlify.app/
+**Live:** [portfolio-yashasvishukla.netlify.app](https://portfolio-yashasvishukla.netlify.app)
+
+---
 
 ## Tech Stack
 
-- Next.js
-- TypeScript
-- Tailwind CSS
-- ESLint
+| Category   | Technologies                          |
+| --------- | ------------------------------------- |
+| Framework | Next.js 14 (App Router)                |
+| Language  | TypeScript                            |
+| Styling   | Tailwind CSS, MUI (Material UI)       |
+| Deployment| Netlify                               |
+
+---
 
 ## Features
 
-- Responsive design
-- Fast performance and optimized build
-- Clean UI with modern layout
-- Project showcase section
-- Easy to extend and maintain
+- **Responsive layout** — Single-column on mobile, two-column on desktop with fixed sidebar
+- **Project showcase** — Featured work with tech tags and live/demo links
+- **Technical summary** — Skills grouped by languages, backend, databases, and MLOps
+- **Optimized** — Next.js font optimization (Inter, Plus Jakarta Sans), minimal runtime deps
+
+---
 
 ## Getting Started
 
-Clone the repo and install dependencies:
+**Prerequisites:** Node.js 18+
 
+```bash
+# Clone and install
+git clone https://github.com/yashasvi-shukla-me/portfolio.git
+cd portfolio
 npm install
 
-Run locally:
-
+# Run in development
 npm run dev
+```
 
-Open http://localhost:3000
+Open [http://localhost:3000](http://localhost:3000).
 
-## Build
+**Production build:**
 
-npm run build  
+```bash
+npm run build
 npm start
+```
 
-## Deployment
+---
 
-Deployed on Netlify.
+## Project Structure
 
-## Author ⚡️
+```
+app/
+├── mainPage/Draken.tsx    # Main layout, projects, skills, about
+├── ClientComponents/      # About, Project, Skills nav; Gradientdiv
+├── assets/                # Project and UI images
+├── layout.tsx
+├── page.tsx
+└── globals.css
+```
 
-Yashasvi Shukla (YASHASVI SHUKLA)
+---
+
+## License
+
+MIT.
+
+---
+
+**Yashasvi Shukla** — [LinkedIn](https://www.linkedin.com/in/yashasvi-shukla-me/) · [GitHub](https://github.com/yashasvi-shukla-me)

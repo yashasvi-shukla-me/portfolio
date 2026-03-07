@@ -7,8 +7,6 @@ export default function About() {
 
   const { state, dispatch } = useContext(UserContext);
 
-  console.log(`state is ${state.count}`);
-
   return (
     <ScrollIntoView selector="#abt">
       <div

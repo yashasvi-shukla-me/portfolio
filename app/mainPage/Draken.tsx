@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import { Box } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import EmailIcon from "@mui/icons-material/Email";
 import codeforge from "../assets/codeforge.png";
 import ames from "../assets/ames.png";
 import resume from "../assets/resume.png";
@@ -61,14 +61,14 @@ const Draken = () => {
       <Grid item xl={6} md={6} lg={6} sm={12} className="relative">
         <div className="static lg:fixed">
           <Box className="w-full md:p-14 p-4 flex flex-col items-start">
-            <h1 className="text-white">Yashasvi Shukla. </h1>
+            <h1 className="text-white font-heading">Yashasvi Shukla.</h1>
             <br></br>
-            <h3 className="text-white">
+            <h3 className="text-white font-heading">
               Full Stack Engineer building scalable systems and AI
             </h3>
             <p style={{ color: "#7B899D" }}>
-              I build clean and scalable products with strong engineering
-              fundamentals.
+              I ship clean, scalable products with strong engineering
+              fundamentals. 
             </p>
           </Box>
           <Box className="flex flex-col sm:content-between content-start">
@@ -119,7 +119,7 @@ const Draken = () => {
                   className="rounded-xl shadow-2xl mb-6"
                   style={{
                     width: "100%",
-                    height: "280px",
+                    height: "300px",
                     objectFit: "cover",
                   }}
                 />
@@ -223,7 +223,7 @@ const Draken = () => {
             </Box>
           </a>
 
-          <a href="https://github.com/yashasvi-shukla-me/ModelForge">
+          <a href="https://modelforge-five.vercel.app/">
             <Box
               className="flex flex-col items-start cursor-pointer mb-4 w-full md:p-14 p-6"
               sx={{
@@ -307,7 +307,7 @@ const Draken = () => {
               >
                 <Image
                   src={ames}
-                  alt="ames.png"
+                  alt="Ames House Price Predictor — ML inference dashboard"
                   style={{
                     width: "180px",
                     height: "100px",
@@ -321,9 +321,9 @@ const Draken = () => {
                   </div>
                   <div>
                     <p className="mb-4">
-                      An end to end ML application that predicts house prices
-                      using the Ames dataset, featuring production ready
-                      inference with a FastAPI backend and web frontend.
+                      End-to-end ML application that predicts house prices using
+                      the Ames dataset, with production-ready inference via a
+                      FastAPI backend and web frontend.
                     </p>
                     <div className="flex gap-2 p-1 my-3 flex-wrap">
                       <Button variant="outlined">ML</Button>
@@ -359,7 +359,7 @@ const Draken = () => {
               >
                 <Image
                   src={news}
-                  alt="news"
+                  alt="The Chronicles — news aggregator app interface"
                   style={{
                     width: "180px",
                     height: "100px",
@@ -373,9 +373,8 @@ const Draken = () => {
                   </div>
                   <div>
                     <p className="mb-4">
-                      Stay informed with our React powered news app, leveraging
-                      the News API and React Hooks for real time updates.
-                      Explore diverse news categories seamlessly.
+                      React-based news aggregator using the News API and React Hooks
+                      for real-time updates across multiple categories.
                     </p>
                     <div className="flex gap-2 p-1 my-3 flex-wrap">
                       <Button variant="outlined">News API</Button>
@@ -410,7 +409,7 @@ const Draken = () => {
               >
                 <Image
                   src={todo}
-                  alt="todo"
+                  alt="Kanbanix — Kanban task board with drag and drop"
                   style={{
                     width: "180px",
                     height: "100px",
@@ -424,10 +423,8 @@ const Draken = () => {
                   </div>
                   <div>
                     <p className="mb-4">
-                      It is a Kanban board with a Matrix style background,
-                      offering intuitive drag and drop, editing and deleting
-                      task management in a terminal-like interface. Includes
-                      local storage persistence.
+                      Kanban-style task board with drag-and-drop, inline editing,
+                      and local storage persistence in a terminal-inspired UI.
                     </p>
                     <div className="flex gap-2 p-1 my-3 flex-wrap">
                       <Button variant="outlined">Local Storage</Button>
@@ -463,7 +460,7 @@ const Draken = () => {
               >
                 <Image
                   src={quiz}
-                  alt="quiz"
+                  alt="Probe — MCQ quiz platform interface"
                   style={{
                     width: "180px",
                     height: "100px",
@@ -477,10 +474,8 @@ const Draken = () => {
                   </div>
                   <div>
                     <p className="mb-4">
-                      Probe is an online MCQ Test platform in which, presents
-                      one question at a time with navigation and real-time
-                      scoring. Including features like question navigation and
-                      real time scores.
+                      Online MCQ assessment platform that presents one question at a
+                      time with section navigation and real-time scoring.
                     </p>
                     <div className="flex gap-2 p-1 my-3 flex-wrap">
                       <Button variant="outlined">React</Button>
@@ -516,7 +511,7 @@ const Draken = () => {
               >
                 <Image
                   src={food}
-                  alt="food"
+                  alt="Nom Nom Nomad — food delivery app UI"
                   style={{
                     width: "180px",
                     height: "100px",
@@ -530,9 +525,8 @@ const Draken = () => {
                   </div>
                   <div>
                     <p className="mb-4">
-                      Indulge effortlessly with our React based food delivery
-                      app crafted with Vite. Perfect example of modern web
-                      development practices.
+                      React-based food delivery UI built with Vite, demonstrating
+                      modern front-end patterns and component architecture.
                     </p>
                     <div className="flex gap-2 p-1 my-3 flex-wrap">
                       <Button variant="outlined">React</Button>
@@ -567,7 +561,7 @@ const Draken = () => {
               >
                 <Image
                   src={gemini}
-                  alt="gemini"
+                  alt="Gemini Clone — AI chat interface"
                   style={{
                     width: "180px",
                     height: "100px",
@@ -581,9 +575,8 @@ const Draken = () => {
                   </div>
                   <div>
                     <p className="mb-4">
-                      Ask away your questions and do not leave until satisfied.
-                      A sleek, fast, and customizable Gemini protocol client
-                      crafted with React and Vite.
+                      Chat interface for the Gemini API—sleek, fast, and
+                      customizable—built with React and Vite.
                     </p>
                     <div className="flex gap-2 p-1 my-3 flex-wrap">
                       <Button variant="outlined">React</Button>
@@ -619,7 +612,7 @@ const Draken = () => {
               >
                 <Image
                   src={sps}
-                  alt="sps"
+                  alt="Rochambeau — rock-paper-scissors game screen"
                   style={{
                     width: "180px",
                     height: "100px",
@@ -633,8 +626,8 @@ const Draken = () => {
                   </div>
                   <div>
                     <p className="mb-4">
-                      Compete against the computer in a battle of wits and luck.
-                      With intuitive controls and engaging gameplay.
+                      Browser-based rock-paper-scissors game with simple,
+                      responsive controls.
                     </p>
                     <div className="flex gap-2 p-1 my-3 flex-wrap">
                       <Button variant="outlined">Development</Button>
@@ -670,7 +663,7 @@ const Draken = () => {
               >
                 <Image
                   src={docs}
-                  alt="docs"
+                  alt="Docket Docs — note-taking app editor"
                   style={{
                     width: "180px",
                     height: "100px",
@@ -684,9 +677,8 @@ const Draken = () => {
                   </div>
                   <div>
                     <p className="mb-4">
-                      Experience seamless note taking with our Docs Note app,
-                      enhanced with Framer Motion animations for a smooth and
-                      engaging user experience. Built efficiently.
+                      Note-taking app with Framer Motion animations and a clean
+                      editor experience, built with React and TypeScript.
                     </p>
                     <div className="flex gap-2 p-1 my-3 flex-wrap">
                       <Button variant="outlined">React</Button>
@@ -722,7 +714,7 @@ const Draken = () => {
               >
                 <Image
                   src={tick}
-                  alt="tick"
+                  alt="Noughts and Crosses — tic-tac-toe game board"
                   style={{
                     width: "180px",
                     height: "100px",
@@ -736,8 +728,8 @@ const Draken = () => {
                   </div>
                   <div>
                     <p className="mb-4">
-                      Implemented a classic online Tic Tac Toe game using merely
-                      JavaScript. Have fun playing against another player.
+                      Classic two-player Tic Tac Toe implemented in vanilla
+                      JavaScript.
                     </p>
                     <div className="flex gap-2 p-1 my-3 flex-wrap">
                       <Button variant="outlined">Development</Button>
@@ -753,7 +745,7 @@ const Draken = () => {
         </Box>
 
         <span className=" md:p-14 md:hidden block p-6 text-white cursor-pointer font-bold">
-          Skills
+          Technical Summary
         </span>
         <Box id="exp" className="w-full">
           <a href="https://github.com/yashasvi-shukla-me?tab=repositories">
@@ -777,11 +769,11 @@ const Draken = () => {
                   },
                 }}
               >
-                <p className="w-100 whitespace-nowrap">2019-2026</p>
+                <p className="w-100 whitespace-nowrap">2019–2026</p>
 
                 <Box>
                   <div className="flex text-white font-bold mb-2 gap-2">
-                    <p>Post Grad, Grad. Developer</p>
+                    <p>Bachelors & Masters · Developer</p>
                     <ArrowOutwardIcon sx={{ color: "#fff" }} />
                     <br></br>
                     <br></br>
@@ -796,21 +788,32 @@ const Draken = () => {
                     </div>
                   </div>
                   <div>
-                    Technologies
+                    Backend & APIs
                     <div className="flex gap-2 p-1 my-3 flex-wrap">
                       <Button variant="outlined">React</Button>
+                      <Button variant="outlined">FastAPI</Button>
+                      <Button variant="outlined">Node.js</Button>
                       <Button variant="outlined">Express</Button>
                       <Button variant="outlined">Docker</Button>
-                      <Button variant="outlined">Node.JS</Button>
-                      <Button variant="outlined">API</Button>
+                      <Button variant="outlined">JWT</Button>
+                    </div>
+                  </div>
+                  <div>
+                    Databases & MLOps
+                    <div className="flex gap-2 p-1 my-3 flex-wrap">
+                      <Button variant="outlined">MongoDB</Button>
+                      <Button variant="outlined">PostgreSQL</Button>
+                      <Button variant="outlined">MySQL</Button>
+                      <Button variant="outlined">MLflow</Button>
+                      <Button variant="outlined">Prometheus</Button>
+                      <Button variant="outlined">AWS</Button>
                     </div>
                   </div>
                   <div>
                     Other
                     <div className="flex gap-2 p-1 my-3 flex-wrap">
                       <Button variant="outlined">Machine Learning</Button>
-                      <Button variant="outlined">MongoDB</Button>
-                      <Button variant="outlined">AWS</Button>
+                      <Button variant="outlined">NLP</Button>
                       <Button variant="outlined">Postman</Button>
                     </div>
                   </div>
@@ -826,17 +829,17 @@ const Draken = () => {
 
         <Box className="w-full md:p-14 p-4 flex flex-col items-start " id="abt">
           <p style={{ color: "#7B899D" }} className="p-2">
-            I completed my schooling from Lucknow then did my graduation and
-            currently pursuing my masters. I am strengthening my foundations in
-            DSA, distributed backend design, and applied machine learning while
-            building production oriented platforms.
+            I completed my schooling in Lucknow, then my graduation, and am
+            currently pursuing my master’s degree. I am strengthening my
+            foundations in DSA, distributed backend design, and applied machine
+            learning while building production-oriented platforms.
           </p>
           <p style={{ color: "#7B899D" }} className="p-2">
             I am a Full-Stack Engineer building scalable web platforms and AI
             driven systems.
           </p>
           <p style={{ color: "#7B899D" }} className="p-2">
-            Outside tech, I enjoy basketball, chess, reading, and learning
+            Outside of work, I enjoy basketball, chess, reading, and learning
             guitar.
           </p>
         </Box>
@@ -851,23 +854,28 @@ const Draken = () => {
         </a>
 
         <Box className="my-30 w-full md:p-14 p-4 flex gap-6 ">
-          <a href="https://github.com/yashasvi-shukla-me" target="_blank">
+          <a href="https://github.com/yashasvi-shukla-me" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <GitHubIcon className="text-white cursor-pointer" />
           </a>
           <a
             href="https://www.linkedin.com/in/yashasvi-shukla-me/"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
           >
             <LinkedInIcon className="text-white cursor-pointer" />
           </a>
+          <a href="mailto:yashasvi.shukla.me@gmail.com" aria-label="Email">
+            <EmailIcon className="text-white cursor-pointer" />
+          </a>
+
           <a
             href="https://www.goodreads.com/user/show/162721733-yashasvi-shukla"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Goodreads"
           >
             <MenuBookIcon className="text-white cursor-pointer" />
-          </a>
-          <a href="https://www.instagram.com/ripoffmyshirt/" target="_blank">
-            <InstagramIcon className="text-white cursor-pointer" />
           </a>
         </Box>
 
@@ -875,7 +883,7 @@ const Draken = () => {
           className="w-full p-14 md:text-base text-sm"
           style={{ color: "#7B899D" }}
         >
-          Built with Next.js and TypeScript. Deployed on Netlify.
+          Next.js, TypeScript · Deployed on Netlify.
         </p>
       </Grid>
     </Grid>

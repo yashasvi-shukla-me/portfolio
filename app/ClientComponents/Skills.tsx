@@ -6,9 +6,6 @@ export default function Skills() {
     const [hovered, setHovered] = useState<boolean>(false);
     const { state, dispatch } = useContext(UserContext);
 
-    console.log(`state is ${state.count}`);
-
-
     return (
         <ScrollIntoView selector='#exp'>
             <div className="flex content-center mb-5" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onClick={() => dispatch({ type: 'exp', payload: "exp" })}>
