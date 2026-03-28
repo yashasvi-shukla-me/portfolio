@@ -1,0 +1,12 @@
+# Static export: publish pre-rendered files from `out/`.
+# Do not enable the Netlify Next.js plugin for this site — it expects a server
+# runtime and can return 500 when combined with `output: "export"`.
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+  # Netlify auto-detects Next.js and may run the Next runtime plugin, which
+  # expects a server build — skip it when serving static `out/`.
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"

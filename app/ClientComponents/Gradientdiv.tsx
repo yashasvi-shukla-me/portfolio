@@ -1,51 +1,38 @@
-"use client"
-import React, { ReactNode } from "react";
+"use client";
+import React, { ReactNode, useEffect, useState } from "react";
 
+function useMousePosition() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-const GradientPosition = () => {
+  useEffect(() => {
+    const updateMousePosition = (ev: MouseEvent) => {
+      setMousePosition({ x: ev.clientX, y: ev.clientY });
+    };
+    window.addEventListener("mousemove", updateMousePosition);
+    return () => window.removeEventListener("mousemove", updateMousePosition);
+  }, []);
 
-    const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
-    let windowWidth: any;
-    if (typeof window !== 'undefined') {
-        windowWidth = window.innerHeight;
-    }
-
-    React.useEffect(() => {
-        const updateMousePosition = (ev: any) => {
-            setMousePosition({ x: ev.clientX, y: ev.clientY });
-        };
-        if (typeof window !== 'undefined') {
-
-            window.addEventListener('mousemove', updateMousePosition);
-        }
-        return () => {
-            if (typeof window !== 'undefined') {
-
-                window.removeEventListener('mousemove', updateMousePosition);
-            }
-        };
-    }, []);
-
-    return (mousePosition)
-};
-
+  return mousePosition;
+}
 
 interface GradientdivProps {
-    children: ReactNode
-    className: string
+  children: ReactNode;
+  className: string;
 }
+
 const Gradientdiv: React.FC<GradientdivProps> = ({ children, className }) => {
-    return (
-        <div
+  const { x, y } = useMousePosition();
 
-            style={{
-                background: `radial-gradient(circle at ${GradientPosition().x}px ${GradientPosition().y}px, #111E42 1%, #101932 25%)`
-            }}
+  return (
+    <div
+      style={{
+        background: `radial-gradient(circle at ${x}px ${y}px, #111E42 1%, #101932 25%)`,
+      }}
+      className={className}
+    >
+      {children}
+    </div>
+  );
+};
 
-            className={className}>
-            {children}
-        </div>
-    )
-}
-
-export default Gradientdiv
+export default Gradientdiv;
