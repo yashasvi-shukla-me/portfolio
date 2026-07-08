@@ -6,11 +6,11 @@ type State = {
   count: string;
 };
 
-const initialState: State = { count: "pro" };
+const initialState: State = { count: "abt" };
 type Action =
-  | { type: "exp"; payload: string }
-  | { type: "pro"; payload: string }
-  | { type: "abt"; payload: string };
+  | { type: "abt"; payload: string }
+  | { type: "skills"; payload: string }
+  | { type: "pro"; payload: string };
 type UserContextType = {
   state: State;
   dispatch: React.Dispatch<Action>;
@@ -24,11 +24,13 @@ export const UserContext = React.createContext<UserContextType>({
 export default function Home() {
   const reducer = (state: State, action: Action): State => {
     switch (action.type) {
+      case "abt":
+        return { ...state, count: action.payload };
       case "exp":
         return { ...state, count: action.payload };
-      case "pro":
+      case "skills":
         return { ...state, count: action.payload };
-      case "abt":
+      case "pro":
         return { ...state, count: action.payload };
       default:
         return state;
