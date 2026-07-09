@@ -30,15 +30,16 @@ export const projects: Project[] = [
     image: resume,
   },
   {
-    name: "ModelForge",
-    href: "https://modelforge-five.vercel.app/",
-    image: mlops,
-  },
-  {
     name: "Ames House Price Predictor",
     href: "https://ames-house-price-predict.netlify.app/",
     image: ames,
   },
+  {
+    name: "ModelForge",
+    href: "https://modelforge-five.vercel.app/",
+    image: mlops,
+  },
+
   {
     name: "The Chronicles",
     href: "https://the-chronicles.vercel.app/",

@@ -27,7 +27,7 @@ export default function Skills() {
           className="text-white cursor-pointer font-bold"
           style={{ opacity: state.count === "skills" ? "1" : "0.3" }}
         >
-          Technical Summary
+          Skills
         </span>
       </div>
     </ScrollIntoView>

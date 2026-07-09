@@ -26,8 +26,6 @@ export default function Home() {
     switch (action.type) {
       case "abt":
         return { ...state, count: action.payload };
-      case "exp":
-        return { ...state, count: action.payload };
       case "skills":
         return { ...state, count: action.payload };
       case "pro":

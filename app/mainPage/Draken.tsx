@@ -65,6 +65,45 @@ const Draken = () => {
               <About />
               <Skills />
               <Project />
+
+              <br></br><br></br><br></br><br></br>
+
+              <Box className="my-30 w-full md:p-2 p-4 flex gap-6 mb-10">
+          <a
+            href="https://github.com/yashasvi-shukla-me"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <GitHubIcon className="text-white cursor-pointer" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yashasvi-shukla-me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <LinkedInIcon className="text-white cursor-pointer" />
+          </a>
+          <a href="mailto:yashasvi.shukla.me@gmail.com" aria-label="Email">
+            <EmailIcon className="text-white cursor-pointer" />
+          </a>
+          <a
+            href="https://www.goodreads.com/user/show/162721733-yashasvi-shukla"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Goodreads"
+          >
+            <MenuBookIcon className="text-white cursor-pointer" />
+          </a>
+        </Box>
+
+        <p
+          className="w-full p-2 md:text-base text-sm "
+          style={{ color: "#7B899D" }}
+        >
+          Next.js, TypeScript · Deployed on Netlify.
+        </p>
             </Box>
           </Box>
         </div>
@@ -83,9 +122,9 @@ const Draken = () => {
         </span>
         <Box id="abt" className={`${sectionPadding} flex flex-col items-start`}>
           <p style={{ color: "#7B899D" }} className="p-2">
-            I completed my schooling in Lucknow, then my graduation, and am
-            currently pursuing my master&apos;s degree. I am strengthening my
-            foundations in DSA, distributed backend design, and applied machine
+            I completed my schooling in Lucknow, then my graduation and masters from Delhi NCR.
+             I am strengthening my
+            foundations in DSA, distributed backend design and applied machine
             learning while building production-oriented platforms.
           </p>
           <p style={{ color: "#7B899D" }} className="p-2">
@@ -93,7 +132,7 @@ const Draken = () => {
             driven systems.
           </p>
           <p style={{ color: "#7B899D" }} className="p-2">
-            Outside of work, I enjoy basketball, chess, reading, and learning
+            Outside of work, I enjoy basketball, chess, reading and learning
             guitar.
           </p>
         </Box>
@@ -109,16 +148,17 @@ const Draken = () => {
                 2019 – 2026
               </p>
             </div>
-            <p style={{ color: "#7B899D" }} className="text-sm leading-relaxed max-w-xl">
-              Building full-stack and ML platforms — from online judges and
-              resume intelligence to MLOps tooling — with a focus on clean
-              architecture, Dockerized deployments, and production-ready APIs.
+            <p style={{ color: "#7B899D" }} className=" leading-relaxed max-w-xl">
+              Building full-stack and ML platforms - from online judges and
+              resume intelligence to litigation and case management software for legal firms, resource management 
+              software for businesses - with a focus on clean and easy customer experience and
+              architecture 
             </p>
             <a
               href="https://github.com/yashasvi-shukla-me?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm font-bold text-white w-fit"
+              className="inline-flex items-center gap-1  font-bold text-white w-fit"
             >
               View repositories
               <ArrowOutwardIcon sx={{ color: "#fff", fontSize: 16 }} />
@@ -188,7 +228,7 @@ const Draken = () => {
 
         
 
-        <Box className="my-30 w-full md:p-14 p-4 flex gap-6">
+        {/* <Box className="my-30 w-full md:p-14 p-4 flex gap-6">
           <a
             href="https://github.com/yashasvi-shukla-me"
             target="_blank"
@@ -223,7 +263,7 @@ const Draken = () => {
           style={{ color: "#7B899D" }}
         >
           Next.js, TypeScript · Deployed on Netlify.
-        </p>
+        </p> */}
       </Grid>
     </Grid>
   );
