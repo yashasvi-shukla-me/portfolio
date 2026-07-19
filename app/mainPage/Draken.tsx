@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import { Box } from "@mui/material";
 import Button from "@mui/material/Button";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
@@ -87,6 +88,14 @@ const Draken = () => {
           </a>
           <a href="mailto:yashasvi.shukla.me@gmail.com" aria-label="Email">
             <EmailIcon className="text-white cursor-pointer" />
+          </a>
+          <a
+            href="https://www.instagram.com/ripoffmyshirt/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <InstagramIcon className="text-white cursor-pointer" />
           </a>
           <a
             href="https://www.goodreads.com/user/show/162721733-yashasvi-shukla"
