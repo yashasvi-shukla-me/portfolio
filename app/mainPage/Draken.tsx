@@ -107,12 +107,12 @@ const Draken = () => {
           </a>
         </Box>
 
-        <p
+        {/* <p
           className="w-full p-2 md:text-base text-sm "
           style={{ color: "#7B899D" }}
         >
           Next.js, TypeScript · Deployed on Netlify.
-        </p>
+        </p> */}
             </Box>
           </Box>
         </div>
